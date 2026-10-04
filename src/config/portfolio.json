@@ -1,0 +1,661 @@
+{
+  "meta": {
+    "name": "Vinay Kumar Pudi",
+    "shortName": "VinayKumar",
+    "role": "Senior Frontend Developer",
+    "title": "Vinay Kumar Pudi — Senior Frontend Developer (React & AI)",
+    "description": "React interfaces for AI-powered product tools, chatbots and virtual try-on.",
+    "siteLabel": "vinaykumar1332.github.io/",
+    "siteLabelAccent": "Hyper-portfolio",
+    "location": "Hyderabad, India"
+  },
+  "seo": {
+    "siteUrl": "https://vinaykumar1332.github.io/Hyper-portfolio/",
+    "title": "Vinay Kumar Pudi — Senior Frontend Developer (React & AI)",
+    "description": "Senior Frontend Developer at TCS, Hyderabad. I build React interfaces for AI products — chatbots, PIM tools and virtual try-on. Open to roles & freelance.",
+    "keywords": [
+      "Vinay Kumar Pudi",
+      "Senior Frontend Developer",
+      "React developer",
+      "Frontend developer Hyderabad",
+      "Generative AI",
+      "AI chatbot UI",
+      "Prompt engineering",
+      "Virtual try-on",
+      "JavaScript",
+      "Freelance React developer"
+    ],
+    "image": "og-image.jpg",
+    "imageAlt": "Vinay Kumar Pudi — I build the screens where AI meets users.",
+    "locale": "en_IN",
+    "themeColor": "#0b0f17"
+  },
+  "nav": [
+    {
+      "id": "about",
+      "label": "About"
+    },
+    {
+      "id": "skills",
+      "label": "Skills"
+    },
+    {
+      "id": "journey",
+      "label": "Experience"
+    },
+    {
+      "id": "projects",
+      "label": "Projects"
+    },
+    {
+      "id": "work-with-me",
+      "label": "Work with me"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "hero": {
+    "eyebrowTag": "<FrontendDeveloper />",
+    "eyebrowItems": [
+      "React",
+      "AI products"
+    ],
+    "headline": [
+      "I build the screens"
+    ],
+    "headlineAccent": "where AI meets users.",
+    "description": "I'm Vinay, a senior frontend developer at TCS. I build React interfaces for AI-powered product tools, chatbots and virtual try-on, turning Figma designs and AI models into fast, accessible screens people enjoy using.",
+    "chips": [
+      {
+        "label": "React.js",
+        "tone": "blue"
+      },
+      {
+        "label": "JavaScript",
+        "tone": "amber"
+      },
+      {
+        "label": "Generative AI",
+        "tone": "teal"
+      },
+      {
+        "label": "UI Engineering",
+        "tone": "pink"
+      }
+    ],
+    "primaryCta": {
+      "label": "Let's work together",
+      "href": "#work-with-me"
+    },
+    "secondaryCta": {
+      "label": "View my work",
+      "href": "#projects"
+    },
+    "codeWindow": {
+      "file": "ProductCard.jsx",
+      "tab": "preview",
+      "previewLabel": "LIVE PREVIEW",
+      "previewTitle": "Relaxed cotton tee",
+      "previewBadge": "AI-generated"
+    },
+    "availability": "Open to senior frontend roles & freelance projects"
+  },
+  "about": {
+    "eyebrow": "My introduction",
+    "title": "About me",
+    "image": {
+      "src": "images/about.webp",
+      "alt": "Illustration of a developer working at a laptop",
+      "width": 480,
+      "height": 480
+    },
+    "paragraphs": [
+      "I'm a frontend developer with 4+ years at Tata Consultancy Services. I started on Sitecore-based enterprise websites and now lead a three-person UI team building internal PIM tools and AI chatbots — including the tool that writes product titles and descriptions for Croma.",
+      "Most of my work is React, along with API integration, prompt work, and checking AI output before it reaches users. I build responsive, accessible interfaces that match the Figma design down to the spacing.",
+      "My goal is to bring concepts to life by crafting websites that are not only visually stunning but also highly functional."
+    ],
+    "experienceStart": "2022-02-01",
+    "stats": [
+      {
+        "type": "experience",
+        "suffix": "+",
+        "label": "Years experience"
+      },
+      {
+        "value": 4,
+        "suffix": "+",
+        "label": "Projects shipped"
+      },
+      {
+        "value": 3,
+        "suffix": "",
+        "label": "Team I lead"
+      },
+      {
+        "value": 1,
+        "suffix": "",
+        "label": "Company (TCS)"
+      }
+    ],
+    "resume": {
+      "file": "files/Vinay_Kumar_Frontend_Developer_Resume.pdf",
+      "downloadName": "Vinay-Kumar-Pudi-Senior-Frontend-Developer-Resume.pdf",
+      "size": "123 KB",
+      "label": "Download resume",
+      "busyLabel": "Downloading…",
+      "doneLabel": "Saved to downloads",
+      "errorLabel": "Opening in a new tab"
+    },
+    "highlights": [
+      {
+        "icon": "pin",
+        "text": "Hyderabad, India"
+      },
+      {
+        "icon": "briefcase",
+        "text": "Senior Frontend Developer at TCS"
+      },
+      {
+        "icon": "sparkles",
+        "text": "React · Generative AI"
+      }
+    ]
+  },
+  "skills": {
+    "eyebrow": "My technical skills",
+    "title": "Skills",
+    "items": [
+      {
+        "name": "React.js",
+        "level": 85,
+        "icon": "react",
+        "color": "#22d3ee",
+        "category": "frontend",
+        "note": "Main stack for PIM tools, chatbots and personal projects"
+      },
+      {
+        "name": "JavaScript (ES6+)",
+        "level": 85,
+        "icon": "js",
+        "color": "#facc15",
+        "category": "frontend",
+        "note": "Every project, from CMS interactions to React apps"
+      },
+      {
+        "name": "HTML5",
+        "level": 90,
+        "icon": "html",
+        "color": "#f97316",
+        "category": "frontend",
+        "note": "Semantic, accessible markup"
+      },
+      {
+        "name": "CSS3",
+        "level": 88,
+        "icon": "css",
+        "color": "#38bdf8",
+        "category": "frontend",
+        "note": "Pixel-matched, responsive layouts from Figma"
+      },
+      {
+        "name": "jQuery",
+        "level": 75,
+        "icon": "jquery",
+        "color": "#4ea8de",
+        "category": "frontend",
+        "note": "Custom interactions on Sitecore pages"
+      },
+      {
+        "name": "PrimeReact",
+        "level": 70,
+        "icon": "primereact",
+        "color": "#a78bfa",
+        "category": "frontend",
+        "note": "Component library for internal PIM screens"
+      },
+      {
+        "name": "Generative AI",
+        "level": 80,
+        "icon": "sparkles",
+        "color": "#f5a623",
+        "category": "ai",
+        "note": "Product titles and descriptions for the Croma catalogue"
+      },
+      {
+        "name": "Prompt engineering",
+        "level": 82,
+        "icon": "prompt",
+        "color": "#f472b6",
+        "category": "ai",
+        "note": "Writing and tuning prompts behind production copy"
+      },
+      {
+        "name": "LLM output evaluation",
+        "level": 78,
+        "icon": "eval",
+        "color": "#2dd4bf",
+        "category": "ai",
+        "note": "Checking generated text against product specs"
+      },
+      {
+        "name": "AI chatbots",
+        "level": 78,
+        "icon": "bot",
+        "color": "#34d399",
+        "category": "ai",
+        "note": "Chatbot UIs and model comparisons before the build"
+      },
+      {
+        "name": "CrewAI",
+        "level": 60,
+        "icon": "workflow",
+        "color": "#fb923c",
+        "category": "ai",
+        "note": "Multi-agent AI workflows"
+      },
+      {
+        "name": "REST APIs",
+        "level": 82,
+        "icon": "server",
+        "color": "#60a5fa",
+        "category": "backend",
+        "note": "Wiring screens to product and AI-content APIs"
+      },
+      {
+        "name": "Node.js",
+        "level": 60,
+        "icon": "node",
+        "color": "#4ade80",
+        "category": "backend",
+        "note": "Server-side JavaScript and tooling"
+      },
+      {
+        "name": "FastAPI",
+        "level": 55,
+        "icon": "fastapi",
+        "color": "#14b8a6",
+        "category": "backend",
+        "note": "Python APIs behind AI features"
+      },
+      {
+        "name": "Azure Blob & Cosmos DB",
+        "level": 60,
+        "icon": "cloud",
+        "color": "#3b82f6",
+        "category": "backend",
+        "note": "Storage and data for internal AI tools"
+      },
+      {
+        "name": "Sitecore CMS",
+        "level": 78,
+        "icon": "sitecore",
+        "color": "#ef4444",
+        "category": "backend",
+        "note": "Enterprise website pages, 2023–2025"
+      },
+      {
+        "name": "Git / GitHub",
+        "level": 88,
+        "icon": "git",
+        "color": "#f43f5e",
+        "category": "tools",
+        "note": "Feature branches and pull-request reviews"
+      },
+      {
+        "name": "Jest & Testing Library",
+        "level": 65,
+        "icon": "jest",
+        "color": "#e86f4a",
+        "category": "tools",
+        "note": "Unit and component tests for React UIs"
+      },
+      {
+        "name": "Figma",
+        "level": 78,
+        "icon": "figma",
+        "color": "#a259ff",
+        "category": "tools",
+        "note": "Turning designs into pixel-accurate pages"
+      },
+      {
+        "name": "Agile / Scrum",
+        "level": 85,
+        "icon": "users",
+        "color": "#94a3b8",
+        "category": "tools",
+        "note": "Sprint planning and code reviews as UI team lead"
+      }
+    ],
+    "lead": "Everything from my resume, with where I've used it. Filter by area to see the frontend, AI or backend side.",
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "frontend",
+        "label": "Frontend"
+      },
+      {
+        "id": "ai",
+        "label": "AI"
+      },
+      {
+        "id": "backend",
+        "label": "Backend & Cloud"
+      },
+      {
+        "id": "tools",
+        "label": "Tools & Testing"
+      }
+    ]
+  },
+  "journey": {
+    "eyebrow": "My journey",
+    "title": "Experience & education",
+    "tabs": [
+      {
+        "id": "work",
+        "label": "Work",
+        "icon": "briefcase",
+        "items": [
+          {
+            "title": "Senior Frontend Developer — Internal AI Projects",
+            "place": "Tata Consultancy Services, Hyderabad",
+            "period": "Jun 2025 — Present",
+            "focus": "Product Information Management (PIM), Croma content tools, AI chatbots",
+            "points": [
+              "Lead a UI team of three on PIM and chatbot projects: plan sprint work, review pull requests and own frontend delivery.",
+              "Built the frontend for a PIM tool that generates product titles and descriptions for the Croma catalogue.",
+              "Wrote and tuned the prompts behind that copy, and checked generated text against product specs before release.",
+              "Built reusable React components shared across internal PIM screens, wired to product and AI-content APIs."
+            ]
+          },
+          {
+            "title": "Frontend Developer — Enterprise CMS Websites",
+            "place": "Tata Consultancy Services, Hyderabad",
+            "period": "Jun 2023 — May 2025",
+            "focus": "Sitecore enterprise websites",
+            "points": [
+              "Built website pages from Figma designs on Sitecore, using templates and drag-and-drop components.",
+              "Wrote custom CSS, JavaScript and jQuery where stock components couldn't handle the design or interactions.",
+              "Connected CMS-managed content and APIs so content teams could update text and images without developer help.",
+              "Improved page speed and Core Web Vitals with lazy loading, image compression, minification and caching."
+            ]
+          },
+          {
+            "title": "Trainee — Frontend Development",
+            "place": "Tata Consultancy Services, Hyderabad",
+            "period": "Feb 2022 — May 2023",
+            "points": [
+              "Completed TCS training in web development (HTML, CSS, JavaScript, React) before the first client assignment.",
+              "Built practice projects with React components, hooks and context."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "education",
+        "label": "Education",
+        "icon": "graduation",
+        "items": [
+          {
+            "title": "Full Stack Web Development",
+            "place": "J-Spiders, Hyderabad",
+            "period": "2021 — 2022"
+          },
+          {
+            "title": "Frontend Development",
+            "place": "Coursera",
+            "period": "2021 — 2022"
+          },
+          {
+            "title": "B.Tech, Electrical and Electronics Engineering",
+            "place": "West Godavari Institute of Science and Engineering, Nallajerla",
+            "period": "Jul 2016 — Nov 2020",
+            "focus": "Aggregate: 71%"
+          }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What I can build for you",
+    "title": "Services",
+    "lead": "From a Figma file to a fast, accessible, AI-ready production UI.",
+    "items": [
+      {
+        "title": "AI Product Interfaces",
+        "icon": "sparkles",
+        "text": "React frontends for AI chatbots, content generation and PIM tools, wired to product and AI-content APIs."
+      },
+      {
+        "title": "Prompt Engineering & AI QA",
+        "icon": "search",
+        "text": "Prompts written and tuned for real product copy, with generated output checked before it reaches users."
+      },
+      {
+        "title": "Responsive, Accessible UI",
+        "icon": "accessibility",
+        "text": "Pixel-accurate pages from Figma that work across browsers, devices and assistive tech."
+      },
+      {
+        "title": "Performance & Core Web Vitals",
+        "icon": "gauge",
+        "text": "Lazy-loaded media, image compression, minification and caching for faster pages."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Selected work",
+    "title": "My projects",
+    "lead": "From AI-powered product tools to learning platforms — open a card to explore.",
+    "items": [
+      {
+        "title": "Daevora",
+        "description": "AI fashion studio for brands: garment virtual try-on, face swap, background studio and mannequin-to-model, plus automatic catalogue and video generation ready to publish.",
+        "image": {
+          "src": "images/daevora.webp",
+          "alt": "Daevora AI workflow: garment, avatar and pose combined into a virtual try-on, then face swap, background studio, catalogue and video generation",
+          "width": 1280,
+          "height": 720
+        },
+        "url": "https://daevora.com/",
+        "tags": [
+          "React",
+          "Generative AI",
+          "Virtual Try-On"
+        ],
+        "status": "Live"
+      },
+      {
+        "title": "Knowledge Hub 2.0",
+        "description": "A collaborative learning platform for discovering, sharing and working together on educational resources and documentation.",
+        "image": {
+          "src": "images/knowledge-hub.webp",
+          "alt": "Knowledge Hub welcome screen with login and sign-up buttons",
+          "width": 1280,
+          "height": 720
+        },
+        "url": "https://knowledge-booster-2-0.vercel.app/",
+        "tags": [
+          "React",
+          "Vite",
+          "Vercel"
+        ],
+        "status": "Live"
+      },
+      {
+        "title": "Rice Cart",
+        "description": "An online storefront for browsing and ordering rice products, built as a fast, responsive shopping experience.",
+        "image": {
+          "src": "images/rice-cart.webp",
+          "alt": "Rice Cart storefront home page",
+          "width": 1280,
+          "height": 597
+        },
+        "url": "https://rice-now-prod.vercel.app/",
+        "tags": [
+          "React",
+          "E-commerce",
+          "Vercel"
+        ],
+        "status": "Live"
+      },
+      {
+        "title": "Weather Report",
+        "description": "Look up the current weather by city name, or by your location in one tap.",
+        "image": {
+          "src": "images/weather-app.webp",
+          "alt": "Weather Report app with a city search field",
+          "width": 791,
+          "height": 427
+        },
+        "url": "https://vinaykumar1332.github.io/Weather-app/",
+        "tags": [
+          "JavaScript",
+          "REST API",
+          "CSS"
+        ],
+        "status": "Live"
+      }
+    ]
+  },
+  "workWithMe": {
+    "eyebrow": "Work with me",
+    "title": "Hiring, or building something?",
+    "lead": "Whether you're filling a frontend role or need a product built, here's what you can expect.",
+    "audiences": [
+      {
+        "id": "recruiters",
+        "icon": "users",
+        "label": "For recruiters & hiring managers",
+        "title": "A frontend lead who ships AI features",
+        "points": [
+          "4+ years of production React and JavaScript at Tata Consultancy Services",
+          "Leads a three-person UI team: sprint planning, PR reviews, frontend delivery",
+          "Builds and evaluates generative-AI features used in a live retail catalogue",
+          "Comfortable across the stack: REST APIs, Node.js, FastAPI and Azure"
+        ],
+        "facts": [
+          {
+            "label": "Based in",
+            "value": "Hyderabad, India"
+          },
+          {
+            "label": "Looking for",
+            "value": "Senior frontend / UI lead roles"
+          }
+        ],
+        "ctas": [
+          {
+            "kind": "resume"
+          },
+          {
+            "label": "LinkedIn profile",
+            "href": "https://www.linkedin.com/in/vinay-kumar-pudi-426634232",
+            "icon": "linkedin"
+          }
+        ]
+      },
+      {
+        "id": "clients",
+        "icon": "handshake",
+        "label": "For freelance clients",
+        "title": "Your idea, built properly",
+        "points": [
+          "Landing pages and business websites that load fast and rank well",
+          "React web apps, dashboards and internal tools",
+          "AI chatbot and content-generation interfaces",
+          "CMS-driven sites your team can update without a developer"
+        ],
+        "process": [
+          "Quick scope call",
+          "Plan & design",
+          "Build with weekly updates",
+          "Launch & handover"
+        ],
+        "ctas": [
+          {
+            "label": "Start a project",
+            "href": "#contact",
+            "topic": "freelance",
+            "icon": "arrow-right"
+          }
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Kind words",
+    "title": "Testimonials",
+    "items": [
+      {
+        "text": "Vinay is a skilled frontend developer with great attention to detail. His code is clean and maintainable.",
+        "author": "Teammate, TCS"
+      },
+      {
+        "text": "Great at solving UI problems under pressure. Always brings in fresh ideas and ensures deadlines are met.",
+        "author": "Project Mentor"
+      },
+      {
+        "text": "His passion for learning and implementing new tech like React and GenAI tools is impressive.",
+        "author": "Bootcamp Instructor"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "Contact me",
+    "heading": "Tell me about the role or project",
+    "text": "Pick a topic, share a few details and I'll get back to you soon. Prefer email? Copy my address in one click.",
+    "email": "vinaypudi1332@gmail.com",
+    "formEndpoint": "https://formsubmit.co/ajax/cc5b87a9c6061b6362d9231d23f3789c",
+    "successMessage": "Thanks! Your message was sent — I'll reply soon.",
+    "errorMessage": "Sorry, the message couldn't be sent. Please email me directly instead.",
+    "location": "Hyderabad, India",
+    "topics": [
+      {
+        "id": "job",
+        "label": "Job opportunity",
+        "placeholder": "Role, team and location / remote…"
+      },
+      {
+        "id": "freelance",
+        "label": "Freelance project",
+        "placeholder": "What you want built, timeline and budget range…"
+      },
+      {
+        "id": "hello",
+        "label": "Just saying hi",
+        "placeholder": "How can I help?"
+      }
+    ]
+  },
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "handle": "vinay-kumar-pudi",
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/vinay-kumar-pudi-426634232"
+    },
+    {
+      "label": "GitHub",
+      "handle": "vinaykumar1332",
+      "icon": "github",
+      "url": "https://github.com/vinaykumar1332"
+    },
+    {
+      "label": "Instagram",
+      "handle": "mr_vinnu_1332",
+      "icon": "instagram",
+      "url": "https://www.instagram.com/mr_vinnu_1332/"
+    }
+  ],
+  "footer": {
+    "tagline": "Senior Frontend Developer",
+    "credit": "Designed & built by Vinay Kumar"
+  }
+}
