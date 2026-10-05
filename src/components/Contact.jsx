@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, m } from 'motion/react'
 import config from '../config/portfolio.json'
+import ContactBuddy from './ContactBuddy'
 import Icon from './ui/Icon'
 import Reveal from './ui/Reveal'
 import { inViewOnce, staggerChild, staggerParent } from '../lib/motion'
@@ -44,6 +45,18 @@ export default function Contact() {
   const formRef = useRef(null)
   const activeTopic = contact.topics.find((t) => t.id === topic)
 
+  // Signals for the character above the form
+  const [focused, setFocused] = useState(null)
+  const [typing, setTyping] = useState(false)
+  const [invalid, setInvalid] = useState(false)
+  const [hoverSend, setHoverSend] = useState(false)
+  const typingTimer = useRef(0)
+  const invalidTimer = useRef(0)
+  useEffect(() => () => {
+    clearTimeout(typingTimer.current)
+    clearTimeout(invalidTimer.current)
+  }, [])
+
   // "Start a project" / similar CTAs preselect a topic
   useEffect(() => {
     const onTopic = (e) => contact.topics.some((t) => t.id === e.detail) && setTopic(e.detail)
@@ -55,6 +68,10 @@ export default function Contact() {
     const { name, value } = e.target
     setValues((v) => ({ ...v, [name]: value }))
     if (errors[name]) setErrors((er) => ({ ...er, [name]: undefined }))
+    if (status === 'sent' || status === 'error') setStatus('idle')
+    setTyping(true)
+    clearTimeout(typingTimer.current)
+    typingTimer.current = setTimeout(() => setTyping(false), 800)
   }
 
   const onSubmit = async (e) => {
@@ -63,6 +80,9 @@ export default function Contact() {
     const found = validate(values)
     setErrors(found)
     if (Object.keys(found).length) {
+      setInvalid(true)
+      clearTimeout(invalidTimer.current)
+      invalidTimer.current = setTimeout(() => setInvalid(false), 2200)
       formRef.current?.querySelector(`[name="${Object.keys(found)[0]}"]`)?.focus()
       return
     }
@@ -97,6 +117,19 @@ export default function Contact() {
   }
 
   const sending = status === 'sending'
+
+  const mood =
+    status === 'sending' ? 'sending'
+    : status === 'sent' ? 'sent'
+    : status === 'error' ? 'error'
+    : invalid ? 'invalid'
+    : typing ? 'typing'
+    : focused ? 'watching'
+    : hoverSend ? 'excited'
+    : 'idle'
+  const bubble =
+    ['sending', 'sent', 'error', 'invalid', 'excited'].includes(mood) ? contact.buddy[mood]
+    : contact.buddy[focused] ?? activeTopic.greeting
 
   return (
     <Section id="contact" index={8} eyebrow={contact.eyebrow} title={contact.title}>
@@ -159,7 +192,15 @@ export default function Contact() {
         </Reveal>
 
         <Reveal from="right" className="contact-form-wrap">
-          <form ref={formRef} className="contact-form card" onSubmit={onSubmit} noValidate>
+          <ContactBuddy mood={mood} message={bubble} formRef={formRef} />
+          <form
+            ref={formRef}
+            className="contact-form card"
+            onSubmit={onSubmit}
+            onFocus={(e) => setFocused(e.target.name || null)}
+            onBlur={() => setFocused(null)}
+            noValidate
+          >
             <fieldset className="topics">
               <legend className="topics-legend mono">I'm reaching out about</legend>
               {contact.topics.map((t) => (
@@ -175,7 +216,14 @@ export default function Contact() {
             <Field id="message" as="textarea" label={activeTopic.placeholder} rows={5} value={values.message} onChange={onChange} error={errors.message} required />
             <input type="text" name="_honey" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
-            <button type="submit" className="btn btn-primary btn-send" data-status={status} disabled={sending}>
+            <button
+              type="submit"
+              className="btn btn-primary btn-send"
+              data-status={status}
+              disabled={sending}
+              onPointerEnter={() => setHoverSend(true)}
+              onPointerLeave={() => setHoverSend(false)}
+            >
               <AnimatePresence mode="wait" initial={false}>
                 <m.span key={status} className="btn-send-inner" initial={{ y: 16, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -16, opacity: 0 }} transition={{ duration: 0.2 }}>
                   {sending ? (
