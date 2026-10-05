@@ -9,17 +9,18 @@ const prefersReducedMotion = () =>
 export function initSmoothScroll() {
   if (lenis || prefersReducedMotion()) return () => {}
 
-  lenis = new Lenis({ duration: 1.15, easing: (t) => 1 - Math.pow(1 - t, 4), smoothWheel: true })
-
-  let frame
-  const raf = (time) => {
-    lenis?.raf(time)
-    frame = requestAnimationFrame(raf)
-  }
-  frame = requestAnimationFrame(raf)
+  // lerp-based wheel smoothing follows the wheel closely (no floaty lag);
+  // touch keeps native momentum scrolling, which feels best on phones.
+  lenis = new Lenis({
+    autoRaf: true,
+    lerp: 0.12,
+    smoothWheel: true,
+    wheelMultiplier: 1,
+    // let scrollable children (textarea, menus) scroll themselves
+    allowNestedScroll: true,
+  })
 
   return () => {
-    cancelAnimationFrame(frame)
     lenis?.destroy()
     lenis = null
   }
@@ -39,7 +40,12 @@ export function scrollToTarget(target) {
   }
 
   if (lenis) {
-    lenis.scrollTo(el, { offset: headerOffset(), onComplete: focus })
+    lenis.scrollTo(el, {
+      offset: headerOffset(),
+      duration: 1.1,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
+      onComplete: focus,
+    })
   } else {
     const top = el.getBoundingClientRect().top + window.scrollY + headerOffset()
     window.scrollTo({ top, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })

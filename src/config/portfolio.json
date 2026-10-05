@@ -5,12 +5,12 @@
     "role": "Senior Frontend Developer",
     "title": "Vinay Kumar Pudi — Senior Frontend Developer (React & AI)",
     "description": "React interfaces for AI-powered product tools, chatbots and virtual try-on.",
-    "siteLabel": "vinaykumar1332.github.io/",
-    "siteLabelAccent": "Hyper-portfolio",
+    "siteLabel": "vinaytech",
+    "siteLabelAccent": ".space",
     "location": "Hyderabad, India"
   },
   "seo": {
-    "siteUrl": "https://vinaykumar1332.github.io/Hyper-portfolio/",
+    "siteUrl": "https://vinaytech.space/",
     "title": "Vinay Kumar Pudi — Senior Frontend Developer (React & AI)",
     "description": "Senior Frontend Developer at TCS, Hyderabad. I build React interfaces for AI products — chatbots, PIM tools and virtual try-on. Open to roles & freelance.",
     "keywords": [
@@ -57,16 +57,11 @@
     }
   ],
   "hero": {
-    "eyebrowTag": "<FrontendDeveloper />",
-    "eyebrowItems": [
-      "React",
-      "AI products"
-    ],
     "headline": [
       "I build the screens"
     ],
     "headlineAccent": "where AI meets users.",
-    "description": "I'm Vinay, a senior frontend developer at TCS. I build React interfaces for AI-powered product tools, chatbots and virtual try-on, turning Figma designs and AI models into fast, accessible screens people enjoy using.",
+    "description": "Senior frontend developer at TCS. I turn Figma files and AI models into fast, accessible React interfaces — chatbots, product tools and virtual try-on.",
     "chips": [
       {
         "label": "React.js",
@@ -100,7 +95,7 @@
       "previewTitle": "Relaxed cotton tee",
       "previewBadge": "AI-generated"
     },
-    "availability": "Open to senior frontend roles & freelance projects"
+    "availability": "Available for new roles & freelance"
   },
   "about": {
     "eyebrow": "My introduction",
@@ -166,6 +161,8 @@
   "skills": {
     "eyebrow": "My technical skills",
     "title": "Skills",
+    "listView": true,
+    "lead": "Grouped by how often I use them, from my everyday stack to working knowledge, with where I've used each one.",
     "items": [
       {
         "name": "React.js",
@@ -328,7 +325,6 @@
         "note": "Sprint planning and code reviews as UI team lead"
       }
     ],
-    "lead": "Everything from my resume, with where I've used it. Filter by area to see the frontend, AI or backend side.",
     "filters": [
       {
         "id": "all",
@@ -349,6 +345,26 @@
       {
         "id": "tools",
         "label": "Tools & Testing"
+      }
+    ],
+    "tiers": [
+      {
+        "id": "daily",
+        "label": "Daily driver",
+        "min": 80,
+        "hint": "What I reach for on every project"
+      },
+      {
+        "id": "shipped",
+        "label": "Shipped in production",
+        "min": 70,
+        "hint": "Used on real releases, comfortable owning it"
+      },
+      {
+        "id": "working",
+        "label": "Working knowledge",
+        "min": 0,
+        "hint": "Used on projects, still going deeper"
       }
     ]
   },
@@ -620,19 +636,32 @@
       {
         "id": "job",
         "label": "Job opportunity",
-        "placeholder": "Role, team and location / remote…"
+        "placeholder": "Role, team and location / remote…",
+        "greeting": "Hiring? I'd love to hear about the role."
       },
       {
         "id": "freelance",
         "label": "Freelance project",
-        "placeholder": "What you want built, timeline and budget range…"
+        "placeholder": "What you want built, timeline and budget range…",
+        "greeting": "Got something you want built?"
       },
       {
         "id": "hello",
         "label": "Just saying hi",
-        "placeholder": "How can I help?"
+        "placeholder": "How can I help?",
+        "greeting": "Hey there! Say anything."
       }
-    ]
+    ],
+    "buddy": {
+      "name": "First up, who am I talking to?",
+      "email": "So I know where to write back.",
+      "message": "Take your time. Details help!",
+      "excited": "Ready when you are!",
+      "invalid": "Hmm, something below needs a look.",
+      "sending": "Sending it over…",
+      "sent": "Got it! I'll reply soon.",
+      "error": "That didn't go through. Try email?"
+    }
   },
   "socials": [
     {

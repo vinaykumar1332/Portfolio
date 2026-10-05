@@ -100,15 +100,11 @@ export default function Hero() {
             {hero.availability}
           </m.p>
           <m.p className="hero-eyebrow mono" {...fadeUp(0.1)}>
-            <span className="hero-eyebrow-tag">{hero.eyebrowTag}</span>
-            {hero.eyebrowItems.map((item) => (
-              <span key={item}>
-                <span className="hero-eyebrow-sep" aria-hidden="true">
-                  ·
-                </span>
-                {item}
-              </span>
-            ))}
+            <span className="hero-eyebrow-name">{meta.name}</span>
+            <span className="hero-eyebrow-sep" aria-hidden="true">
+              /
+            </span>
+            <span>{meta.location}</span>
           </m.p>
 
           <m.h1 id="hero-title" className="hero-title" initial="hidden" animate="show" aria-label={`${hero.headline.join(' ')} ${hero.headlineAccent}`}>

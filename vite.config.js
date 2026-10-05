@@ -4,7 +4,7 @@ import seoPlugin from './seo.plugin.js'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Relative base so the build works on GitHub Pages sub-paths (e.g. /Hyper-portfolio/)
+  // Relative base keeps the build portable (custom domain vinaytech.space, sub-paths or local preview)
   base: './',
   plugins: [react(), seoPlugin()],
   build: {
