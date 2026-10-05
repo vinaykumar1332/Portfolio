@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Vinay Kumar Pudi — Senior Frontend Developer",
+  "short_name": "Vinay Kumar",
+  "description": "Senior Frontend Developer building React interfaces for AI products — chatbots, PIM tools and virtual try-on.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "categories": ["portfolio", "developer", "productivity"],
+  "background_color": "#0b0f17",
+  "theme_color": "#0b0f17",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
