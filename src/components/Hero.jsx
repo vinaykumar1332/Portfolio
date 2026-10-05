@@ -107,7 +107,17 @@ export default function Hero() {
             <span>{meta.location}</span>
           </m.p>
 
-          <m.h1 id="hero-title" className="hero-title" initial="hidden" animate="show" aria-label={`${hero.headline.join(' ')} ${hero.headlineAccent}`}>
+          {/* Name + role lead the h1 for search engines; the visible words animate in */}
+          <m.h1
+            id="hero-title"
+            className="hero-title"
+            initial="hidden"
+            animate="show"
+            aria-label={`${meta.name}, ${meta.role}. ${hero.headline.join(' ')} ${hero.headlineAccent}`}
+          >
+            <span className="sr-only">
+              {meta.name}, {meta.role}:{' '}
+            </span>
             <span aria-hidden="true">
               <SplitWords text={hero.headline.join(' ')} />
               <br className="hero-br" />

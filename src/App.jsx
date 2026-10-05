@@ -12,6 +12,7 @@ import Services from './components/Services'
 import Projects from './components/Projects'
 import WorkWithMe from './components/WorkWithMe'
 import Testimonials from './components/Testimonials'
+import Faq from './components/Faq'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollUI from './components/ScrollUI'
@@ -53,6 +54,7 @@ export default function App() {
           <Projects />
           <WorkWithMe />
           <Testimonials />
+          <Faq />
           <Contact />
         </main>
         <Footer />
