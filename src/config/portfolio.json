@@ -519,23 +519,6 @@
           "Vercel"
         ],
         "status": "Live"
-      },
-      {
-        "title": "Weather Report",
-        "description": "Look up the current weather by city name, or by your location in one tap.",
-        "image": {
-          "src": "images/weather-app.webp",
-          "alt": "Weather Report app with a city search field",
-          "width": 791,
-          "height": 427
-        },
-        "url": "https://vinaykumar1332.github.io/Weather-app/",
-        "tags": [
-          "JavaScript",
-          "REST API",
-          "CSS"
-        ],
-        "status": "Live"
       }
     ]
   },

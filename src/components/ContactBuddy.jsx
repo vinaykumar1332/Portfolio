@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef } from 'react'
 import { AnimatePresence, m } from 'motion/react'
 
 // Deterministic confetti pieces: [x, y, rotate, colour, delay]
@@ -35,9 +35,10 @@ function caretPoint(el) {
  * A little character peeking over the contact form. Its eyes follow the mouse,
  * or the caret of the field being typed in, and it reacts to the form's state.
  */
-export default function ContactBuddy({ mood, message, formRef }) {
+export default function ContactBuddy({ mood, message, formRef, variant = 'contact' }) {
   const rootRef = useRef(null)
   const svgRef = useRef(null)
+  const clipPathId = `buddy-edge-${useId().replace(/:/g, '')}`
 
   useEffect(() => {
     const root = rootRef.current
@@ -48,11 +49,13 @@ export default function ContactBuddy({ mood, message, formRef }) {
 
     const aim = () => {
       frame = 0
-      const r = svgRef.current.getBoundingClientRect()
+      const svg = svgRef.current
+      if (!svg) return
+      const r = svg.getBoundingClientRect()
       const hx = r.left + r.width / 2
       const hy = r.top + r.height * 0.55
       const active = document.activeElement
-      const target = formRef.current?.contains(active) ? caretPoint(active) : pointer
+      const target = formRef?.current?.contains(active) ? caretPoint(active) : pointer
       let lx = 0
       let ly = 0
       if (target) {
@@ -98,15 +101,20 @@ export default function ContactBuddy({ mood, message, formRef }) {
   }, [formRef])
 
   return (
-    <div ref={rootRef} className="buddy" data-mood={mood} aria-hidden="true">
-      <svg ref={svgRef} className="buddy-svg" viewBox="0 0 220 132" focusable="false">
+    <div ref={rootRef} className="buddy" data-mood={mood} data-variant={variant} aria-hidden="true">
+      <svg
+        ref={svgRef}
+        className="buddy-svg"
+        viewBox="0 0 220 132"
+        focusable="false"
+      >
         <defs>
-          <clipPath id="buddy-edge">
+          <clipPath id={clipPathId}>
             <rect x="0" y="-40" width="220" height="160" />
           </clipPath>
         </defs>
 
-        <g clipPath="url(#buddy-edge)">
+        <g clipPath={`url(#${clipPathId})`}>
           <g className="buddy-track">
             <g className="buddy-head">
               <rect className="buddy-skin-shade" x="95" y="96" width="30" height="40" rx="10" />
