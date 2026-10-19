@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { AnimatePresence, m, useScroll, useSpring } from 'motion/react'
+import { AnimatePresence, m, useScroll } from 'motion/react'
 import config from '../config/portfolio.json'
 import Icon from './ui/Icon'
 import Reveal from './ui/Reveal'
@@ -16,7 +16,6 @@ export default function Journey() {
 
   // Timeline line "draws" itself as you scroll through it
   const { scrollYProgress } = useScroll({ target: timelineRef, offset: ['start 80%', 'end 55%'] })
-  const lineScale = useSpring(scrollYProgress, { stiffness: 120, damping: 24 })
 
   // WAI-ARIA tabs keyboard pattern
   const onKeyDown = (e, i) => {
@@ -60,7 +59,7 @@ export default function Journey() {
 
       <div ref={timelineRef} className="timeline-wrap">
         <span className="timeline-track" aria-hidden="true">
-          <m.span className="timeline-progress" style={{ scaleY: lineScale }} />
+          <m.span className="timeline-progress" style={{ scaleY: scrollYProgress }} />
         </span>
         <AnimatePresence mode="wait" initial={false}>
           <m.ol

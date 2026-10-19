@@ -222,6 +222,9 @@ button {
 .bg-glow {
   position: absolute;
   border-radius: 50%;
+}
+
+.bg-glow--parallax {
   will-change: transform;
 }
 
@@ -2366,7 +2369,7 @@ button {
 
 .project-media-inner {
   position: absolute;
-  inset: -7% 0;
+  inset: 0;
 }
 
 .project-img {
@@ -2376,9 +2379,6 @@ button {
 
 .project-img img {
   object-position: top center;
-  transition:
-    opacity 0.6s var(--ease),
-    transform 0.9s var(--ease);
 }
 
 .project-link:hover .project-img img {
@@ -2498,6 +2498,136 @@ button {
   margin-top: 36px;
 }
 
+/* ---------- Welcome notification ---------- */
+.welcome-toast {
+  --buddy-w: 112px;
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  z-index: 150;
+  display: grid;
+  grid-template-columns: var(--buddy-w) minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  width: min(390px, calc(100vw - 32px));
+  padding: 18px;
+  border-color: var(--border-strong);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.welcome-toast .buddy {
+  position: relative;
+  inset: auto;
+  z-index: 0;
+}
+
+.welcome-toast .buddy-svg {
+  width: var(--buddy-w);
+}
+
+.welcome-toast .buddy-bubble,
+.welcome-toast .buddy-confetti {
+  display: none;
+}
+
+.welcome-toast-content {
+  position: relative;
+  min-width: 0;
+  padding-right: 16px;
+}
+
+.welcome-toast-close {
+  position: absolute;
+  top: -12px;
+  right: -11px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.welcome-toast-close:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.welcome-toast-eyebrow {
+  margin-bottom: 4px;
+  color: var(--amber);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.welcome-toast-content h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+.welcome-toast-message {
+  margin: 3px 0 12px;
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.welcome-toast-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.welcome-toast-choices a {
+  display: block;
+  padding: 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.25;
+  text-align: center;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.welcome-toast-choices a:last-child {
+  grid-column: 1 / -1;
+}
+
+.welcome-toast-choices a:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.welcome-toast-choices a[aria-disabled='true'] {
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .welcome-toast {
+    --buddy-w: 88px;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: auto;
+    max-width: 390px;
+    margin-inline: auto;
+    gap: 4px;
+    padding: 14px 12px;
+  }
+
+  .welcome-toast-content {
+    padding-right: 14px;
+  }
+}
+
 @media (min-width: 760px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2533,10 +2663,10 @@ button {
   object-position: center;
 }
 
-/* Wide screens: featured card on top, the rest in an even 3-column row */
+/* Keep the project cards balanced when only a few projects are listed. */
 @media (min-width: 1100px) {
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-title {
@@ -3499,19 +3629,30 @@ button {
 
 /* ---- moods ---- */
 .buddy[data-mood='idle'] .buddy-mouth--smile,
+.buddy[data-mood='projects'] .buddy-mouth--open,
+.buddy[data-mood='hiring'] .buddy-mouth--small,
 .buddy[data-mood='excited'] .buddy-mouth--open,
 .buddy[data-mood='watching'] .buddy-mouth--small,
 .buddy[data-mood='typing'] .buddy-mouth--small,
 .buddy[data-mood='sending'] .buddy-mouth--o,
 .buddy[data-mood='sent'] .buddy-mouth--open,
+.buddy[data-mood='farewell'] .buddy-mouth--sad,
 .buddy[data-mood='invalid'] .buddy-mouth--flat,
 .buddy[data-mood='error'] .buddy-mouth--sad {
   opacity: 1;
 }
 
 /* curious: brows up */
-.buddy:is([data-mood='watching'], [data-mood='typing'], [data-mood='excited'], [data-mood='sent']) .buddy-brows {
+.buddy:is([data-mood='watching'], [data-mood='typing'], [data-mood='excited'], [data-mood='sent'], [data-mood='projects'], [data-mood='hiring']) .buddy-brows {
   transform: translateY(-3px);
+}
+
+.buddy[data-variant='welcome'][data-mood='projects'] .buddy-head {
+  animation: buddy-hop 0.45s var(--ease) 1 alternate;
+}
+
+.buddy[data-variant='welcome'][data-mood='hiring'] .buddy-head {
+  animation: buddy-nod 0.45s ease-in-out 2;
 }
 
 /* typing: small nods while reading along */
@@ -3549,6 +3690,31 @@ button {
   opacity: 1;
   transform-origin: 176px 104px;
   animation: buddy-wave 0.6s ease-in-out 4 alternate;
+}
+
+.buddy[data-variant='welcome']:is([data-mood='projects'], [data-mood='hiring'], [data-mood='sent'], [data-mood='farewell']) .buddy-wave {
+  opacity: 1;
+  transform-origin: 176px 104px;
+}
+
+.buddy[data-variant='welcome']:is([data-mood='projects'], [data-mood='hiring'], [data-mood='sent'], [data-mood='farewell']) .buddy-hand--r {
+  display: none;
+}
+
+.buddy[data-variant='welcome'][data-mood='projects'] .buddy-wave {
+  animation: buddy-wave 0.58s ease-in-out 2 alternate;
+}
+
+.buddy[data-variant='welcome'][data-mood='hiring'] .buddy-wave {
+  animation: buddy-wave 0.42s ease-in-out 3 alternate;
+}
+
+.buddy[data-variant='welcome'][data-mood='sent'] .buddy-wave {
+  animation: buddy-wave 0.58s ease-in-out 2 alternate;
+}
+
+.buddy[data-variant='welcome'][data-mood='farewell'] .buddy-wave {
+  animation: buddy-wave 0.7s ease-in-out 2 alternate;
 }
 
 @keyframes buddy-breathe {

@@ -16,6 +16,7 @@ import Faq from './components/Faq'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollUI from './components/ScrollUI'
+import WelcomeToast from './components/WelcomeToast'
 
 // Animation features load in a separate chunk so they don't block first paint
 const loadMotionFeatures = () => import('./lib/motionFeatures').then((mod) => mod.default)
@@ -44,6 +45,7 @@ export default function App() {
         </a>
         <Background />
         <ScrollUI />
+        <WelcomeToast />
         <Header />
         <main id="main" tabIndex={-1}>
           <Hero />

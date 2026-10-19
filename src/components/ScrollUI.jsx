@@ -1,19 +1,18 @@
 import { useState } from 'react'
-import { AnimatePresence, m, useMotionValueEvent, useScroll, useSpring, useTransform } from 'motion/react'
+import { AnimatePresence, m, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
 import Icon from './ui/Icon'
 
 /** Top progress bar + back-to-top button with a progress ring. */
 export default function ScrollUI() {
   const { scrollY, scrollYProgress } = useScroll()
-  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 26, restDelta: 0.001 })
-  const dash = useTransform(progress, (p) => 126 * (1 - p))
+  const dash = useTransform(scrollYProgress, (p) => 126 * (1 - p))
   const [show, setShow] = useState(false)
 
   useMotionValueEvent(scrollY, 'change', (y) => setShow(y > window.innerHeight * 0.8))
 
   return (
     <>
-      <m.div className="scroll-progress" style={{ scaleX: progress }} aria-hidden="true" />
+      <m.div className="scroll-progress" style={{ scaleX: scrollYProgress }} aria-hidden="true" />
       <AnimatePresence>
         {show && (
           <m.a

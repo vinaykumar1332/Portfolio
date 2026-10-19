@@ -1,5 +1,4 @@
-import { useRef } from 'react'
-import { m, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { m } from 'motion/react'
 import config from '../config/portfolio.json'
 import Icon from './ui/Icon'
 import Img from './ui/Img'
@@ -10,16 +9,10 @@ import Section from './ui/Section'
 const { projects } = config
 
 function ProjectCard({ project, index }) {
-  const ref = useRef(null)
-  const reduce = useReducedMotion()
-  // Image drifts inside its frame while the card scrolls past
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const imgY = useTransform(scrollYProgress, [0, 1], reduce ? ['0%', '0%'] : ['-6%', '6%'])
   const external = /^https?:/.test(project.url)
 
   return (
     <m.li
-      ref={ref}
       className={`project ${index === 0 ? 'project--featured' : ''}`}
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -33,9 +26,9 @@ function ProjectCard({ project, index }) {
         aria-label={`${project.title} — ${project.status}${external ? ' (opens in a new tab)' : ''}`}
       >
         <div className="project-media">
-          <m.div className="project-media-inner" style={{ y: imgY }}>
+          <div className="project-media-inner">
             <Img image={project.image} className="project-img" sizes="(min-width: 900px) 50vw, 100vw" />
-          </m.div>
+          </div>
           <span className="project-status mono" data-status={project.status.toLowerCase()}>
             <span className="project-status-dot" aria-hidden="true" />
             {project.status}
