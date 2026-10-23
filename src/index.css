@@ -3593,6 +3593,37 @@ button {
   animation: buddy-wave 0.7s ease-in-out 2 alternate;
 }
 
+/* Poked: hop, eyes stay wide open, brows lift */
+.buddy[data-variant='contact'] { cursor: pointer; }
+
+.buddy[data-poked='true'] .buddy-head {
+  animation: buddy-hop 0.5s var(--ease) 2 alternate;
+}
+
+.buddy[data-poked='true'] .buddy-lid {
+  animation: none;
+  transform: scaleY(0);
+}
+
+.buddy[data-poked='true'] .buddy-brows {
+  transform: translateY(-3px);
+}
+
+/* Space reserved while a lazy section loads */
+.section-placeholder {
+  position: relative;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.section-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--text) 5%, transparent), transparent) 0 0 / 200% 100%;
+  animation: shimmer 1.3s linear infinite;
+}
+
 @keyframes buddy-breathe {
   50% { transform: translateY(1.5px); }
 }

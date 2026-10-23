@@ -3,7 +3,7 @@
     "name": "Vinay Kumar Pudi",
     "shortName": "VinayKumar",
     "role": "Senior Frontend Developer",
-    "title": "Vinay Kumar Pudi — Senior Frontend Developer (React & AI)",
+    "title": "Vinay Kumar Pudi — Senior Frontend Developer | React, Hyderabad",
     "description": "React interfaces for AI-powered product tools, chatbots and virtual try-on.",
     "siteLabel": "vinaytech",
     "siteLabelAccent": ".space",
@@ -11,19 +11,57 @@
   },
   "seo": {
     "siteUrl": "https://vinaytech.space/",
-    "title": "Vinay Kumar Pudi — Senior Frontend Developer (React & AI)",
-    "description": "Senior Frontend Developer at TCS, Hyderabad. I build React interfaces for AI products — chatbots, PIM tools and virtual try-on. Open to roles & freelance.",
+    "title": "Vinay Kumar Pudi — Senior Frontend Developer | React, Hyderabad",
+    "description": "Vinay Kumar Pudi (Vinay Kumar · vinaytech) is a Senior Frontend Developer at TCS in Hyderabad, India. React, JavaScript and responsive UI engineer. Open to frontend roles and freelance projects.",
+    "alternateNames": ["Vinay Kumar", "Vinay Kumar Pudi", "Vinay Pudi", "Vinay Tech", "vinaytech", "vinaytech.space"],
+    "geo": {
+      "latitude": 17.385,
+      "longitude": 78.4867,
+      "region": "IN-TG",
+      "placename": "Hyderabad, Telangana, India"
+    },
     "keywords": [
       "Vinay Kumar Pudi",
+      "Vinay Kumar",
+      "Vinay Pudi",
+      "Vinay Tech",
+      "vinaytech",
+      "Vinay Kumar Frontend Developer",
+      "Vinay Kumar Pudi React developer",
       "Senior Frontend Developer",
-      "React developer",
+      "Senior Frontend Developer Hyderabad",
+      "React developer Hyderabad",
       "Frontend developer Hyderabad",
-      "Generative AI",
-      "AI chatbot UI",
-      "Prompt engineering",
-      "Virtual try-on",
-      "JavaScript",
+      "Frontend developer India",
+      "React.js developer",
+      "JavaScript developer",
+      "Sitecore developer",
+      "PrimeReact developer",
+      "Web accessibility developer",
+      "Responsive web design",
       "Freelance React developer"
+    ],
+    "faq": [
+      {
+        "question": "Who is Vinay Kumar Pudi?",
+        "answer": "Vinay Kumar Pudi is a Senior Frontend Developer based in Hyderabad, India. He works at Tata Consultancy Services (TCS), building React interfaces, Sitecore websites and internal product tools."
+      },
+      {
+        "question": "What does Vinay Kumar Pudi do?",
+        "answer": "He builds fast, responsive and accessible user interfaces with React and JavaScript, turns Figma designs into production pages, and leads a three-person UI team."
+      },
+      {
+        "question": "What are Vinay Kumar Pudi's main skills?",
+        "answer": "React.js, JavaScript (ES6+), HTML5, CSS3 and SCSS, responsive web design, Git and GitHub, Sitecore CMS and SXA, jQuery, PrimeReact and web accessibility. He also has working knowledge of CI/CD pipelines, domain and DNS hosting, and Azure basics."
+      },
+      {
+        "question": "Is Vinay Kumar Pudi available for hire or freelance work?",
+        "answer": "Yes. He is open to senior frontend and UI lead roles, and to freelance work such as landing pages, React web apps, dashboards and CMS-driven websites."
+      },
+      {
+        "question": "Where can I see Vinay Kumar Pudi's projects?",
+        "answer": "Projects are listed at vinaytech.space, including SiteSeal Inventory, Daevora, Knowledge Hub 2.0 and Rice Cart. Code is on GitHub at github.com/vinaykumar1332."
+      }
     ],
     "image": "og-image.jpg",
     "imageAlt": "Vinay Kumar Pudi — I build the screens where AI meets users.",
@@ -166,19 +204,19 @@
     "items": [
       {
         "name": "React.js",
-        "level": 85,
+        "level": 88,
         "icon": "react",
         "color": "#22d3ee",
         "category": "frontend",
-        "note": "Main stack for PIM tools, chatbots and personal projects"
+        "note": "Building reusable, responsive interfaces for internal tools and web applications"
       },
       {
         "name": "JavaScript (ES6+)",
-        "level": 85,
+        "level": 86,
         "icon": "js",
         "color": "#facc15",
         "category": "frontend",
-        "note": "Every project, from CMS interactions to React apps"
+        "note": "Interactive UI behaviour, DOM handling, and application logic"
       },
       {
         "name": "HTML5",
@@ -186,15 +224,39 @@
         "icon": "html",
         "color": "#f97316",
         "category": "frontend",
-        "note": "Semantic, accessible markup"
+        "note": "Semantic and accessible page structure"
       },
       {
-        "name": "CSS3",
+        "name": "CSS3 / SCSS",
         "level": 88,
         "icon": "css",
         "color": "#38bdf8",
         "category": "frontend",
-        "note": "Pixel-matched, responsive layouts from Figma"
+        "note": "Responsive layouts, styling, animations, and reusable UI patterns"
+      },
+      {
+        "name": "Responsive Web Design",
+        "level": 85,
+        "icon": "mobile",
+        "color": "#34d399",
+        "category": "frontend",
+        "note": "Mobile, tablet, and desktop-friendly user interfaces"
+      },
+      {
+        "name": "Git / GitHub",
+        "level": 84,
+        "icon": "git",
+        "color": "#f43f5e",
+        "category": "tools",
+        "note": "Version control, feature branches, pull requests, and collaboration"
+      },
+      {
+        "name": "Sitecore CMS / SXA",
+        "level": 78,
+        "icon": "sitecore",
+        "color": "#ef4444",
+        "category": "frontend",
+        "note": "Enterprise website development, components, and content-driven pages"
       },
       {
         "name": "jQuery",
@@ -202,127 +264,71 @@
         "icon": "jquery",
         "color": "#4ea8de",
         "category": "frontend",
-        "note": "Custom interactions on Sitecore pages"
+        "note": "Custom UI interactions and enhancements for Sitecore pages"
       },
       {
         "name": "PrimeReact",
-        "level": 70,
+        "level": 72,
         "icon": "primereact",
         "color": "#a78bfa",
         "category": "frontend",
-        "note": "Component library for internal PIM screens"
+        "note": "Building consistent component-based interfaces for internal PIM tools"
       },
       {
-        "name": "Generative AI",
-        "level": 80,
-        "icon": "sparkles",
-        "color": "#f5a623",
-        "category": "ai",
-        "note": "Product titles and descriptions for the Croma catalogue"
-      },
-      {
-        "name": "Prompt engineering",
-        "level": 82,
-        "icon": "prompt",
-        "color": "#f472b6",
-        "category": "ai",
-        "note": "Writing and tuning prompts behind production copy"
-      },
-      {
-        "name": "LLM output evaluation",
-        "level": 78,
-        "icon": "eval",
+        "name": "Web Accessibility",
+        "level": 74,
+        "icon": "accessibility",
         "color": "#2dd4bf",
-        "category": "ai",
-        "note": "Checking generated text against product specs"
+        "category": "frontend",
+        "note": "Improving keyboard navigation, semantic markup, and accessible UI behaviour"
       },
       {
-        "name": "AI chatbots",
-        "level": 78,
-        "icon": "bot",
-        "color": "#34d399",
-        "category": "ai",
-        "note": "Chatbot UIs and model comparisons before the build"
+        "name": "Bootstrap / Tailwind CSS",
+        "level": 66,
+        "icon": "bootstrap",
+        "color": "#f472b6",
+        "category": "frontend",
+        "note": "Rapid responsive UI development and utility-based styling"
       },
       {
-        "name": "CrewAI",
-        "level": 60,
-        "icon": "workflow",
-        "color": "#fb923c",
-        "category": "ai",
-        "note": "Multi-agent AI workflows"
-      },
-      {
-        "name": "REST APIs",
-        "level": 82,
+        "name": "API Integration Basics",
+        "level": 62,
         "icon": "server",
         "color": "#60a5fa",
-        "category": "backend",
-        "note": "Wiring screens to product and AI-content APIs"
+        "category": "frontend",
+        "note": "Consuming frontend data from existing APIs using JavaScript"
       },
       {
-        "name": "Node.js",
-        "level": 60,
-        "icon": "node",
-        "color": "#4ade80",
-        "category": "backend",
-        "note": "Server-side JavaScript and tooling"
+        "name": "AI / LLM Basics",
+        "level": 50,
+        "icon": "bot",
+        "color": "#f5a623",
+        "category": "ai",
+        "note": "Basic understanding of AI models and how AI features are integrated into user interfaces"
       },
       {
-        "name": "FastAPI",
-        "level": 55,
-        "icon": "fastapi",
+        "name": "CI/CD Pipelines",
+        "level": 66,
+        "icon": "workflow",
+        "color": "#fb923c",
+        "category": "tools",
+        "note": "Automated builds and deployments for web apps"
+      },
+      {
+        "name": "Domain, Hosting & DNS",
+        "level": 64,
+        "icon": "server",
         "color": "#14b8a6",
-        "category": "backend",
-        "note": "Python APIs behind AI features"
+        "category": "tools",
+        "note": "Custom domains, DNS records and production hosting setup"
       },
       {
-        "name": "Azure Blob & Cosmos DB",
+        "name": "Azure Basics",
         "level": 60,
         "icon": "cloud",
         "color": "#3b82f6",
-        "category": "backend",
-        "note": "Storage and data for internal AI tools"
-      },
-      {
-        "name": "Sitecore CMS",
-        "level": 78,
-        "icon": "sitecore",
-        "color": "#ef4444",
-        "category": "backend",
-        "note": "Enterprise website pages, 2023–2025"
-      },
-      {
-        "name": "Git / GitHub",
-        "level": 88,
-        "icon": "git",
-        "color": "#f43f5e",
         "category": "tools",
-        "note": "Feature branches and pull-request reviews"
-      },
-      {
-        "name": "Jest & Testing Library",
-        "level": 65,
-        "icon": "jest",
-        "color": "#e86f4a",
-        "category": "tools",
-        "note": "Unit and component tests for React UIs"
-      },
-      {
-        "name": "Figma",
-        "level": 78,
-        "icon": "figma",
-        "color": "#a259ff",
-        "category": "tools",
-        "note": "Turning designs into pixel-accurate pages"
-      },
-      {
-        "name": "Agile / Scrum",
-        "level": 85,
-        "icon": "users",
-        "color": "#94a3b8",
-        "category": "tools",
-        "note": "Sprint planning and code reviews as UI team lead"
+        "note": "Core Azure services and cloud fundamentals"
       }
     ],
     "filters": [
@@ -339,12 +345,8 @@
         "label": "AI"
       },
       {
-        "id": "backend",
-        "label": "Backend & Cloud"
-      },
-      {
         "id": "tools",
-        "label": "Tools & Testing"
+        "label": "Tools"
       }
     ],
     "tiers": [
@@ -352,19 +354,19 @@
         "id": "daily",
         "label": "Daily driver",
         "min": 80,
-        "hint": "What I reach for on every project"
+        "hint": "What I use regularly to build frontend applications"
       },
       {
         "id": "shipped",
         "label": "Shipped in production",
         "min": 70,
-        "hint": "Used on real releases, comfortable owning it"
+        "hint": "Technologies used in real client releases"
       },
       {
         "id": "working",
-        "label": "Working knowledge",
+        "label": "Familiar with",
         "min": 0,
-        "hint": "Used on projects, still going deeper"
+        "hint": "Used in projects and actively strengthening"
       }
     ]
   },
@@ -469,6 +471,25 @@
     "title": "My projects",
     "lead": "From AI-powered product tools to learning platforms — open a card to explore.",
     "items": [
+      {
+        "title": "SiteSeal Inventory",
+        "description": "Multi-site inventory dashboard for waterproofing and construction companies: stock by site, batch expiry with FEFO picking, bill upload from Excel, PDF or photo, tools tracking and Excel reports. Client demo with mock data, in English, Hindi and Telugu.",
+        "image": {
+          "src": "images/siteseal-inventory.png",
+          "alt": "SiteSeal Inventory dashboard in dark theme with KPI cards, stock value and consumption charts",
+          "width": 1440,
+          "height": 900
+        },
+        "url": "https://inventory-management-gules-nine-65.vercel.app/login",
+        "tags": [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Vercel"
+        ],
+        "status": "Live"
+      },
       {
         "title": "Daevora",
         "description": "AI fashion studio for brands: garment virtual try-on, face swap, background studio and mannequin-to-model, plus automatic catalogue and video generation ready to publish.",
