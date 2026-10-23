@@ -1,5 +1,14 @@
-import { useEffect, useId, useRef } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { AnimatePresence, m } from 'motion/react'
+
+// Lines the buddy says when it's poked (tapped or clicked)
+const POKE_LINES = [
+  'Hey, that tickles!',
+  'Still here, promise.',
+  'Pick a topic and I’ll cheer you on.',
+  'Psst: a short message works best.',
+]
+const POKE_MS = 2200
 
 // Deterministic confetti pieces: [x, y, rotate, colour, delay]
 const CONFETTI = [
@@ -39,6 +48,20 @@ export default function ContactBuddy({ mood, message, formRef, variant = 'contac
   const rootRef = useRef(null)
   const svgRef = useRef(null)
   const clipPathId = `buddy-edge-${useId().replace(/:/g, '')}`
+
+  // Poke: a tap or click makes it react and say a line for a moment
+  const [pokeLine, setPokeLine] = useState(null)
+  const pokeCount = useRef(0)
+  const pokeTimer = useRef(0)
+  useEffect(() => () => clearTimeout(pokeTimer.current), [])
+
+  const onPoke = () => {
+    if (variant !== 'contact') return
+    setPokeLine(POKE_LINES[pokeCount.current % POKE_LINES.length])
+    pokeCount.current += 1
+    clearTimeout(pokeTimer.current)
+    pokeTimer.current = setTimeout(() => setPokeLine(null), POKE_MS)
+  }
 
   useEffect(() => {
     const root = rootRef.current
@@ -101,7 +124,15 @@ export default function ContactBuddy({ mood, message, formRef, variant = 'contac
   }, [formRef])
 
   return (
-    <div ref={rootRef} className="buddy" data-mood={mood} data-variant={variant} aria-hidden="true">
+    <div
+      ref={rootRef}
+      className="buddy"
+      data-mood={mood}
+      data-variant={variant}
+      data-poked={pokeLine !== null}
+      aria-hidden="true"
+      onPointerDown={onPoke}
+    >
       <svg
         ref={svgRef}
         className="buddy-svg"
@@ -180,13 +211,13 @@ export default function ContactBuddy({ mood, message, formRef, variant = 'contac
       <div className="buddy-bubble">
         <AnimatePresence mode="wait" initial={false}>
           <m.span
-            key={message}
+            key={pokeLine ?? message}
             initial={{ opacity: 0, y: 6, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.96 }}
             transition={{ duration: 0.18 }}
           >
-            {message}
+            {pokeLine ?? message}
           </m.span>
         </AnimatePresence>
       </div>

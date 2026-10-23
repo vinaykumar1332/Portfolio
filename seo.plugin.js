@@ -20,6 +20,25 @@ const abs = (path, base) => new URL(path, base).href
 const tierOf = (skills, level) => skills.tiers.findIndex((t) => level >= t.min)
 const faqItems = (c) => (c.faq?.show ? c.faq.items : [])
 
+// Named AI crawlers are allowed explicitly, so answer engines can read the site (GEO)
+const AI_BOTS = [
+  'GPTBot',
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'ClaudeBot',
+  'Claude-SearchBot',
+  'Claude-User',
+  'PerplexityBot',
+  'Perplexity-User',
+  'Google-Extended',
+  'Applebot-Extended',
+]
+
+function robotsTxt(seo) {
+  const bots = AI_BOTS.map((bot) => `User-agent: ${bot}\nAllow: /\n`).join('\n')
+  return `User-agent: *\nAllow: /\n\n${bots}\nSitemap: ${abs('sitemap.xml', seo.siteUrl)}\n`
+}
+
 function structuredData(c) {
   const { seo, meta, socials, about, skills, journey, projects, contact } = c
   const url = seo.siteUrl
@@ -53,7 +72,11 @@ function structuredData(c) {
         },
         email: `mailto:${contact.email}`,
         address: { '@type': 'PostalAddress', addressLocality: 'Hyderabad', addressRegion: 'Telangana', addressCountry: 'IN' },
-        homeLocation: { '@type': 'Place', name: meta.location },
+        homeLocation: {
+          '@type': 'Place',
+          name: seo.geo?.placename ?? meta.location,
+          ...(seo.geo && { geo: { '@type': 'GeoCoordinates', latitude: seo.geo.latitude, longitude: seo.geo.longitude } }),
+        },
         worksFor: { '@type': 'Organization', name: 'Tata Consultancy Services', alternateName: 'TCS', url: 'https://www.tcs.com/' },
         hasOccupation: {
           '@type': 'Occupation',
@@ -89,6 +112,7 @@ function structuredData(c) {
         '@id': `${url}#website`,
         url,
         name: `${meta.name} — Portfolio`,
+        alternateName: seo.alternateNames,
         description: meta.description,
         inLanguage: 'en',
         author: { '@id': person },
@@ -155,8 +179,10 @@ function headTags(c) {
     `<meta name="apple-mobile-web-app-title" content="${esc(meta.name)}" />`,
     `<meta name="apple-mobile-web-app-capable" content="yes" />`,
     `<meta name="mobile-web-app-capable" content="yes" />`,
-    `<meta name="geo.region" content="IN-TG" />`,
-    `<meta name="geo.placename" content="${esc(meta.location)}" />`,
+    `<meta name="geo.region" content="${esc(seo.geo?.region ?? 'IN-TG')}" />`,
+    `<meta name="geo.placename" content="${esc(seo.geo?.placename ?? meta.location)}" />`,
+    seo.geo && `<meta name="geo.position" content="${seo.geo.latitude};${seo.geo.longitude}" />`,
+    seo.geo && `<meta name="ICBM" content="${seo.geo.latitude}, ${seo.geo.longitude}" />`,
     seo.googleVerification && `<meta name="google-site-verification" content="${esc(seo.googleVerification)}" />`,
     seo.bingVerification && `<meta name="msvalidate.01" content="${esc(seo.bingVerification)}" />`,
     `<link rel="canonical" href="${esc(url)}" />`,
@@ -171,6 +197,7 @@ function headTags(c) {
     // Open Graph (LinkedIn, WhatsApp, Facebook, Slack…)
     `<meta property="og:type" content="profile" />`,
     `<meta property="og:site_name" content="${esc(meta.name)}" />`,
+    ...socials.map((s) => `<meta property="og:see_also" content="${esc(s.url)}" />`),
     `<meta property="og:locale" content="${esc(seo.locale)}" />`,
     `<meta property="og:url" content="${esc(url)}" />`,
     `<meta property="og:title" content="${esc(seo.title)}" />`,
@@ -353,11 +380,7 @@ export default function seoPlugin() {
     generateBundle() {
       const c = readConfig()
       const { seo } = c
-      this.emitFile({
-        type: 'asset',
-        fileName: 'robots.txt',
-        source: `User-agent: *\nAllow: /\n\nSitemap: ${abs('sitemap.xml', seo.siteUrl)}\n`,
-      })
+      this.emitFile({ type: 'asset', fileName: 'robots.txt', source: robotsTxt(seo) })
       this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemap(c) })
       this.emitFile({ type: 'asset', fileName: 'llms.txt', source: llmsTxt(c) })
     },
