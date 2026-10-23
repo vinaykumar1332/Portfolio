@@ -13,7 +13,7 @@
     "siteUrl": "https://vinaytech.space/",
     "title": "Vinay Kumar Pudi — Senior Frontend Developer | React, Hyderabad",
     "description": "Vinay Kumar Pudi (Vinay Kumar · vinaytech) is a Senior Frontend Developer at TCS in Hyderabad, India. React, JavaScript and responsive UI engineer. Open to frontend roles and freelance projects.",
-    "alternateNames": ["Vinay Kumar", "Vinay Kumar Pudi", "Vinay Pudi", "Vinay Tech", "vinaytech", "vinaytech.space"],
+    "alternateNames": ["Vinay Kumar", "Vinay Kumar Pudi", "Vinay Pudi", "Pudi Vinay Kumar", "Vinay Tech", "vinaytech", "vinaytech.space"],
     "geo": {
       "latitude": 17.385,
       "longitude": 78.4867,
@@ -30,43 +30,33 @@
       "Vinay Kumar Pudi React developer",
       "Senior Frontend Developer",
       "Senior Frontend Developer Hyderabad",
+      "Senior React developer",
       "React developer Hyderabad",
       "Frontend developer Hyderabad",
       "Frontend developer India",
+      "Hire React developer India",
       "React.js developer",
       "JavaScript developer",
       "Sitecore developer",
+      "Sitecore frontend developer",
       "PrimeReact developer",
       "Web accessibility developer",
       "Responsive web design",
-      "Freelance React developer"
-    ],
-    "faq": [
-      {
-        "question": "Who is Vinay Kumar Pudi?",
-        "answer": "Vinay Kumar Pudi is a Senior Frontend Developer based in Hyderabad, India. He works at Tata Consultancy Services (TCS), building React interfaces, Sitecore websites and internal product tools."
-      },
-      {
-        "question": "What does Vinay Kumar Pudi do?",
-        "answer": "He builds fast, responsive and accessible user interfaces with React and JavaScript, turns Figma designs into production pages, and leads a three-person UI team."
-      },
-      {
-        "question": "What are Vinay Kumar Pudi's main skills?",
-        "answer": "React.js, JavaScript (ES6+), HTML5, CSS3 and SCSS, responsive web design, Git and GitHub, Sitecore CMS and SXA, jQuery, PrimeReact and web accessibility. He also has working knowledge of CI/CD pipelines, domain and DNS hosting, and Azure basics."
-      },
-      {
-        "question": "Is Vinay Kumar Pudi available for hire or freelance work?",
-        "answer": "Yes. He is open to senior frontend and UI lead roles, and to freelance work such as landing pages, React web apps, dashboards and CMS-driven websites."
-      },
-      {
-        "question": "Where can I see Vinay Kumar Pudi's projects?",
-        "answer": "Projects are listed at vinaytech.space, including SiteSeal Inventory, Daevora, Knowledge Hub 2.0 and Rice Cart. Code is on GitHub at github.com/vinaykumar1332."
-      }
+      "Freelance React developer",
+      "Freelance web developer Hyderabad",
+      "AI frontend developer",
+      "AI chatbot UI developer",
+      "PIM tool frontend",
+      "Virtual try-on",
+      "TCS frontend developer",
+      "UI team lead"
     ],
     "image": "og-image.jpg",
     "imageAlt": "Vinay Kumar Pudi — I build the screens where AI meets users.",
     "locale": "en_IN",
-    "themeColor": "#0b0f17"
+    "themeColor": "#0b0f17",
+    "googleVerification": "",
+    "bingVerification": ""
   },
   "nav": [
     {
@@ -623,6 +613,42 @@
       {
         "text": "His passion for learning and implementing new tech like React and GenAI tools is impressive.",
         "author": "Bootcamp Instructor"
+      }
+    ]
+  },
+  "faq": {
+    "show": true,
+    "eyebrow": "Quick answers",
+    "title": "FAQ",
+    "lead": "The questions recruiters and clients ask me most.",
+    "items": [
+      {
+        "q": "Who is Vinay Kumar Pudi?",
+        "a": "Vinay Kumar Pudi is a Senior Frontend Developer at Tata Consultancy Services (TCS) in Hyderabad, India, with 4+ years of experience building React interfaces for AI products: chatbots, product information management (PIM) tools and virtual try-on."
+      },
+      {
+        "q": "What do you specialise in?",
+        "a": "React and JavaScript frontends for AI-powered products. That includes chatbot interfaces, the PIM tool that generates product titles and descriptions for the Croma catalogue, and the prompt engineering and output checks behind that generated copy."
+      },
+      {
+        "q": "Are you available for hire or freelance work?",
+        "a": "Yes. I'm open to senior frontend and UI lead roles, and to freelance projects: React web apps, dashboards, AI chatbot interfaces and fast business websites. The quickest way to reach me is the contact form on this page or vinaypudi1332@gmail.com."
+      },
+      {
+        "q": "Where are you based? Do you work remotely?",
+        "a": "I'm based in Hyderabad, India, and I'm open to remote work."
+      },
+      {
+        "q": "What is your tech stack?",
+        "a": "Daily: React, JavaScript (ES6+), HTML5, CSS3, REST APIs and Git. In production: PrimeReact, jQuery, Sitecore CMS and Figma. Working knowledge: Node.js, FastAPI, Azure Blob Storage and Cosmos DB, Jest and Testing Library, and CrewAI."
+      },
+      {
+        "q": "Have you led a frontend team?",
+        "a": "Yes. I lead a three-person UI team at TCS: planning sprint work, reviewing pull requests and owning frontend delivery for PIM and chatbot projects."
+      },
+      {
+        "q": "Where can I get your resume?",
+        "a": "Download it as a PDF from the About or Work with me section on this page."
       }
     ]
   },

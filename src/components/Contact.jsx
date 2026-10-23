@@ -132,7 +132,7 @@ export default function Contact() {
     : contact.buddy[focused] ?? activeTopic.greeting
 
   return (
-    <Section id="contact" index={8} eyebrow={contact.eyebrow} title={contact.title}>
+    <Section id="contact" index={9} eyebrow={contact.eyebrow} title={contact.title}>
       <div className="contact-grid">
         <Reveal from="left" className="contact-side">
           <h3 className="contact-heading">{contact.heading}</h3>

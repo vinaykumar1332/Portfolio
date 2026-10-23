@@ -40,8 +40,9 @@ export function scrollToTarget(target) {
   }
 
   if (lenis) {
+    // Lenis already subtracts the page's scroll-padding-top (header height + 8px,
+    // set in index.css), so no extra header offset here or it's applied twice.
     lenis.scrollTo(el, {
-      offset: headerOffset(),
       duration: 1.1,
       easing: (t) => 1 - Math.pow(1 - t, 4),
       onComplete: focus,

@@ -21,6 +21,7 @@ const sectionLoaders = {
   projects: () => import('./components/Projects'),
   'work-with-me': () => import('./components/WorkWithMe'),
   testimonials: () => import('./components/Testimonials'),
+  faq: () => import('./components/Faq'),
   contact: () => import('./components/Contact'),
 }
 const Skills = lazy(sectionLoaders.skills)
@@ -29,6 +30,7 @@ const Services = lazy(sectionLoaders.services)
 const Projects = lazy(sectionLoaders.projects)
 const WorkWithMe = lazy(sectionLoaders['work-with-me'])
 const Testimonials = lazy(sectionLoaders.testimonials)
+const Faq = lazy(sectionLoaders.faq)
 const Contact = lazy(sectionLoaders.contact)
 
 /** Reserves the section's space while its chunk loads, so the page doesn't jump. */
@@ -99,6 +101,9 @@ export default function App() {
           </Suspense>
           <Suspense fallback={<SectionPlaceholder id="testimonials" />}>
             <Testimonials />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder id="faq" />}>
+            <Faq />
           </Suspense>
           <Suspense fallback={<SectionPlaceholder id="contact" />}>
             <Contact />
