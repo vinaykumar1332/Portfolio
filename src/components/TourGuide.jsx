@@ -162,6 +162,9 @@ export default function TourGuide() {
                     Guide me <Icon name="arrow-right" className="tour-pill-arrow" />
                   </button>
                 </span>
+                <button type="button" className="tour-pill-close" onClick={dismiss} aria-label="Close tour">
+                  ×
+                </button>
               </m.div>
             ) : (
               <m.div

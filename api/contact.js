@@ -106,7 +106,11 @@ async function forward({ name, email, message, topic }) {
     }),
     signal: AbortSignal.timeout(FORWARD_TIMEOUT_MS),
   })
-  if (!upstream.ok) throw new Error(`upstream ${upstream.status}`)
+  // FormSubmit answers HTTP 200 even when it refuses the message, so read its success flag too
+  const data = await upstream.json().catch(() => ({}))
+  if (!upstream.ok || String(data.success) !== 'true') {
+    throw new Error(`upstream ${upstream.status} success=${data.success} message=${data.message ?? ''}`)
+  }
 }
 
 export default async function handler(req, res) {
@@ -134,7 +138,9 @@ export default async function handler(req, res) {
   try {
     await forward(fields)
     return res.status(200).json({ ok: true })
-  } catch {
+  } catch (err) {
+    // Shows up in the Vercel function logs; the browser only gets a generic message
+    console.error('contact forward failed:', err instanceof Error ? err.message : err)
     return res.status(502).json({ ok: false, error: 'Could not send right now' })
   }
 }
