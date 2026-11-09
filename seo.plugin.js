@@ -77,7 +77,6 @@ function structuredData(c) {
           name: seo.geo?.placename ?? meta.location,
           ...(seo.geo && { geo: { '@type': 'GeoCoordinates', latitude: seo.geo.latitude, longitude: seo.geo.longitude } }),
         },
-        worksFor: { '@type': 'Organization', name: 'Tata Consultancy Services', alternateName: 'TCS', url: 'https://www.tcs.com/' },
         hasOccupation: {
           '@type': 'Occupation',
           name: meta.role,
