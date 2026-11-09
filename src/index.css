@@ -4165,3 +4165,13 @@ h1, h2, h3, h4,
 @media (prefers-reduced-motion: reduce) {
   .tour-highlight { animation: none; }
 }
+
+/* ---------- Tour: close button on the collapsed pill ---------- */
+.tour-pill-close {
+  flex: none; width: 26px; height: 26px; border-radius: 50%; padding: 0; cursor: pointer;
+  display: grid; place-items: center; font: inherit; font-size: 1rem; line-height: 1;
+  border: 1px solid var(--border); background: transparent; color: var(--text-2);
+  transition: transform 0.4s var(--ease), background-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.tour-pill-close:hover { background: var(--surface-2); color: var(--text); transform: rotate(90deg); }
+.tour-pill-close:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
