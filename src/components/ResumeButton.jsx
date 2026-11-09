@@ -16,6 +16,8 @@ async function fetchWithProgress(url, onProgress) {
   const chunks = []
   let received = 0
   for (;;) {
+    // Chunks must arrive in order, so this read is intentionally sequential
+    // oxlint-disable-next-line no-await-in-loop
     const { done, value } = await reader.read()
     if (done) break
     chunks.push(value)

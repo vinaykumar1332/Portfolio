@@ -54,7 +54,7 @@
     "image": "og-image.jpg",
     "imageAlt": "Vinay Kumar Pudi — I build the screens where AI meets users.",
     "locale": "en_IN",
-    "themeColor": "#0b0f17",
+    "themeColor": "#0a1628",
     "googleVerification": "",
     "bingVerification": ""
   },
@@ -89,7 +89,7 @@
       "I build the screens"
     ],
     "headlineAccent": "where AI meets users.",
-    "description": "Senior frontend developer in Hyderabad. I turn Figma files and AI models into fast, accessible React interfaces — chatbots, product tools and virtual try-on.",
+    "description": "I build the screens where AI meets users. I develop modern web applications, AI-powered interfaces and responsive digital products — turning complex ideas into intuitive user experiences.",
     "chips": [
       {
         "label": "React.js",
@@ -461,7 +461,7 @@
         "title": "SiteSeal Inventory",
         "description": "Multi-site inventory dashboard for waterproofing and construction companies: stock by site, batch expiry with FEFO picking, bill upload from Excel, PDF or photo, tools tracking and Excel reports. Client demo with mock data, in English, Hindi and Telugu.",
         "image": {
-          "src": "images/siteseal-inventory.png",
+          "src": "images/siteseal-inventory.webp",
           "alt": "SiteSeal Inventory dashboard in dark theme with KPI cards, stock value and consumption charts",
           "width": 1440,
           "height": 900
@@ -641,7 +641,7 @@
     "heading": "Tell me about the role or project",
     "text": "Pick a topic, share a few details and I'll get back to you soon. Prefer email? Copy my address in one click.",
     "email": "vinaypudi1332@gmail.com",
-    "formEndpoint": "https://formsubmit.co/ajax/cc5b87a9c6061b6362d9231d23f3789c",
+    "formEndpoint": "/api/contact",
     "successMessage": "Thanks! Your message was sent — I'll reply soon.",
     "errorMessage": "Sorry, the message couldn't be sent. Please email me directly instead.",
     "location": "Hyderabad, India",
@@ -690,6 +690,84 @@
       "url": "https://www.instagram.com/mr_vinnu_1332/"
     }
   ],
+  "tour": {
+    "startLabel": "Guide me",
+    "pillPrompt": "Want a quick tour of the site?",
+    "loadingText": "Getting ready",
+    "loadMs": 500,
+    "stops": [
+      {
+        "id": "home",
+        "title": "Welcome",
+        "messages": [
+          "Welcome! This top screen is a quick summary of who I am and what I build.",
+          "I build the screens where AI meets users. Start reading right here.",
+          "The hero holds the headline, a short intro, and buttons to get in touch.",
+          "This is the first screen. Scroll down whenever you are ready for more."
+        ]
+      },
+      {
+        "id": "about",
+        "title": "About me",
+        "messages": [
+          "This is About me. Here you'll find who I am and how I like to work.",
+          "Start here for the short version of who I am and how I work.",
+          "Quick intro: I build React interfaces for AI-powered products.",
+          "About me is where I explain my approach, step by step."
+        ]
+      },
+      {
+        "id": "skills",
+        "title": "Skills",
+        "messages": [
+          "These are the tools I use every day, grouped by how often I reach for them.",
+          "React and JavaScript are my daily tools. The rest is grouped below.",
+          "Every skill here is one I have used on real work, not just tutorials.",
+          "Each skill has a short note on where I have used it."
+        ]
+      },
+      {
+        "id": "journey",
+        "title": "Experience",
+        "messages": [
+          "Here is where I have worked and studied, in order.",
+          "My work history and education, newest first.",
+          "This is the path so far: training, client projects and study.",
+          "Scroll through to see how each role built on the last."
+        ]
+      },
+      {
+        "id": "projects",
+        "title": "Projects",
+        "messages": [
+          "Live products you can open right now. Pick one and have a look.",
+          "Real products with live links, not just mockups.",
+          "Open any card to explore the project.",
+          "Daevora, SiteSeal and more: each one is live and ready to try."
+        ]
+      },
+      {
+        "id": "work-with-me",
+        "title": "Work with me",
+        "messages": [
+          "Hiring, or have a project in mind? Start here, it's quick.",
+          "Recruiters and clients each have their own card here.",
+          "Tell me the role or project and I will reply personally.",
+          "Pick the card that fits you: hiring or a freelance project."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact",
+        "messages": [
+          "Send a message and I reply personally. Thanks for taking the tour!",
+          "The fastest way to reach me is the form, or copy my email.",
+          "Pick a topic, add a few details, and I will get back to you.",
+          "That is the whole tour. Thanks for stopping by!"
+        ]
+      }
+    ]
+  },
   "footer": {
     "tagline": "Senior Frontend Developer",
     "credit": "Designed & built by Vinay Kumar"

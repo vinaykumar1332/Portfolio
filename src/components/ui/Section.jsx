@@ -9,7 +9,7 @@ export default function Section({ id, index, eyebrow, title, lead, className = '
         <Reveal as="header" className="section-head">
           <p className="section-eyebrow mono">
             <span className="section-index">{String(index).padStart(2, '0')}</span>
-            <span className="section-slash">//</span>
+            <span className="section-slash">{'//'}</span>
             {eyebrow}
           </p>
           <h2 className="section-title" id={titleId}>

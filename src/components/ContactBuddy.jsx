@@ -223,8 +223,8 @@ export default function ContactBuddy({ mood, message, formRef, variant = 'contac
       </div>
 
       <span className="buddy-confetti">
-        {CONFETTI.map(([x, y, r, c, d], i) => (
-          <i key={i} style={{ '--x': `${x}px`, '--y': `${y}px`, '--r': `${r}deg`, '--c': c, '--d': `${d}s` }} />
+        {CONFETTI.map(([x, y, r, c, d]) => (
+          <i key={`${x}:${y}`} style={{ '--x': `${x}px`, '--y': `${y}px`, '--r': `${r}deg`, '--c': c, '--d': `${d}s` }} />
         ))}
       </span>
     </div>
