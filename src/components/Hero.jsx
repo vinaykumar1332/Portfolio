@@ -21,6 +21,8 @@ const fadeUp = (delay) => ({
 function SplitWords({ text, startIndex = 0, className }) {
   // The space must sit outside the inline-block mask or it collapses
   return text.split(' ').map((word, i) => (
+    // Words can repeat, so the position is part of the key
+    // oxlint-disable-next-line react/no-array-index-key
     <Fragment key={`${word}-${i}`}>
       <span className="word-mask">
         <m.span className={`word ${className ?? ''}`} custom={startIndex + i} variants={wordVariant}>

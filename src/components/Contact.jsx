@@ -19,6 +19,55 @@ function validate(values) {
   return errors
 }
 
+const VERIFY_MS = 800
+
+/** Checkbox human check: click to verify, with a short scan before the tick draws in. */
+function BotCheck({ verified, onVerified, error }) {
+  const [checking, setChecking] = useState(false)
+  const timer = useRef(0)
+  useEffect(() => () => clearTimeout(timer.current), [])
+
+  const state = verified ? 'done' : checking ? 'checking' : 'idle'
+
+  const onClick = () => {
+    if (verified || checking) return
+    setChecking(true)
+    timer.current = setTimeout(() => {
+      setChecking(false)
+      onVerified()
+    }, VERIFY_MS)
+  }
+
+  return (
+    <div className="human-check-wrap">
+      <button
+        type="button"
+        role="checkbox"
+        aria-checked={verified}
+        className="hc"
+        data-state={state}
+        data-invalid={!!error}
+        onClick={onClick}
+        disabled={verified}
+      >
+        <span className="hc-progress" aria-hidden="true" />
+        <span className="hc-box" aria-hidden="true">
+          <svg className="hc-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12.5l4.5 4.5L19 7.5" />
+          </svg>
+        </span>
+        <span className="hc-text">I'm not a bot</span>
+        <span className="hc-meta mono">{state === 'done' ? 'Verified' : state === 'checking' ? 'Checking…' : 'Human check'}</span>
+      </button>
+      {error && (
+        <p className="field-error" role="alert">
+          <Icon name="alert" /> Please confirm you're not a bot.
+        </p>
+      )}
+    </div>
+  )
+}
+
 function Field({ id, label, error, as = 'input', ...props }) {
   const Tag = as
   return (
@@ -41,6 +90,9 @@ export default function Contact() {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const [copied, setCopied] = useState(false)
+  const [verified, setVerified] = useState(false)
+  const [captchaKey, setCaptchaKey] = useState(0)
+  const [botError, setBotError] = useState(false)
   const [topic, setTopic] = useState(contact.topics[0].id)
   const formRef = useRef(null)
   const activeTopic = contact.topics.find((t) => t.id === topic)
@@ -56,6 +108,11 @@ export default function Contact() {
     clearTimeout(typingTimer.current)
     clearTimeout(invalidTimer.current)
   }, [])
+
+  const onVerified = () => {
+    setVerified(true)
+    setBotError(false)
+  }
 
   // "Start a project" / similar CTAs preselect a topic
   useEffect(() => {
@@ -76,7 +133,13 @@ export default function Contact() {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    if (e.target._honey.value) return // bot trap
+    // The honeypot field name is fixed by the form
+  // oxlint-disable-next-line no-underscore-dangle
+  if (e.target._honey.value) return // bot trap
+    if (!verified) {
+      setBotError(true)
+      return
+    }
     const found = validate(values)
     setErrors(found)
     if (Object.keys(found).length) {
@@ -91,11 +154,13 @@ export default function Contact() {
       const res = await fetch(contact.formEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...values, topic: activeTopic.label, _subject: `Portfolio · ${activeTopic.label} · ${values.name}` }),
+        body: JSON.stringify({ name: values.name.trim(), email: values.email.trim(), message: values.message.trim(), topic: activeTopic.label }),
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       setStatus('sent')
       setValues({ name: '', email: '', message: '' })
+      setVerified(false)
+      setCaptchaKey((k) => k + 1)
     } catch {
       setStatus('error')
     }
@@ -211,10 +276,12 @@ export default function Contact() {
                 </label>
               ))}
             </fieldset>
-            <Field id="name" label="Your name" autoComplete="name" value={values.name} onChange={onChange} error={errors.name} required />
-            <Field id="email" label="Email address" type="email" autoComplete="email" value={values.email} onChange={onChange} error={errors.email} required />
-            <Field id="message" as="textarea" label={activeTopic.placeholder} rows={5} value={values.message} onChange={onChange} error={errors.message} required />
+            <Field id="name" label="Your name" autoComplete="name" value={values.name} onChange={onChange} error={errors.name} maxLength={100} required />
+            <Field id="email" label="Email address" type="email" autoComplete="email" value={values.email} onChange={onChange} error={errors.email} maxLength={254} required />
+            <Field id="message" as="textarea" label={activeTopic.placeholder} rows={5} value={values.message} onChange={onChange} error={errors.message} maxLength={3000} required />
             <input type="text" name="_honey" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+
+            <BotCheck key={captchaKey} verified={verified} onVerified={onVerified} error={botError} />
 
             <button
               type="submit"

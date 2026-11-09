@@ -77,7 +77,6 @@ function structuredData(c) {
           name: seo.geo?.placename ?? meta.location,
           ...(seo.geo && { geo: { '@type': 'GeoCoordinates', latitude: seo.geo.latitude, longitude: seo.geo.longitude } }),
         },
-        worksFor: { '@type': 'Organization', name: 'Tata Consultancy Services', alternateName: 'TCS', url: 'https://www.tcs.com/' },
         hasOccupation: {
           '@type': 'Occupation',
           name: meta.role,
@@ -352,7 +351,7 @@ function sitemap(c) {
 
 // Latin subsets of the fonts used above the fold. Preloading them lets the hero
 // text render in its final font without a swap (better LCP, no layout shift).
-const PRELOAD_FONTS = [/inter-latin-wght-normal-.*\.woff2$/, /jetbrains-mono-latin-wght-normal-.*\.woff2$/]
+const PRELOAD_FONTS = [/manrope-latin-wght-normal-.*\.woff2$/, /inter-latin-wght-normal-.*\.woff2$/, /jetbrains-mono-latin-wght-normal-.*\.woff2$/]
 
 function fontPreloads(bundle) {
   if (!bundle) return ''

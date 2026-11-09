@@ -13,7 +13,7 @@ export function initSmoothScroll() {
   // touch keeps native momentum scrolling, which feels best on phones.
   lenis = new Lenis({
     autoRaf: true,
-    lerp: 0.12,
+    lerp: 0.085,
     smoothWheel: true,
     wheelMultiplier: 1,
     // let scrollable children (textarea, menus) scroll themselves

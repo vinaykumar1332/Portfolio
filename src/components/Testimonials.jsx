@@ -52,8 +52,8 @@ export default function Testimonials() {
         <div key={copies} className="marquee-track" style={{ '--count': testimonials.items.length, '--copies': copies }}>
           {Array.from({ length: copies }, (_, copy) => (
             <div key={copy} ref={copy === 0 ? groupRef : undefined} className="marquee-group" aria-hidden={copy > 0 || undefined}>
-              {testimonials.items.map((item, i) => (
-                <Card key={i} item={item} />
+              {testimonials.items.map((item) => (
+                <Card key={item.author} item={item} />
               ))}
             </div>
           ))}

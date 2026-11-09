@@ -58,7 +58,7 @@ export default function About() {
           </m.dl>
 
           <Reveal className="about-actions">
-            <ResumeButton {...about.resume} />
+            {about.showResume && <ResumeButton {...about.resume} />}
             <a href="#contact" className="btn btn-ghost">
               Contact me <Icon name="arrow-right" className="btn-arrow" />
             </a>
